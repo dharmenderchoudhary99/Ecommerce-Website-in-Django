@@ -1,0 +1,68 @@
+{% extends "base/base.html" %}
+
+{% block starts %}
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_product' product.slug%}" class="title">
+                        <br>{{product.product_name}}</br></a>
+                    <div class="price mt-2">{{product.price}}</div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+
+        {% endfor %}
+        {% comment %} <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> 
+                    <img src="../images/items/6.jpg">
+                    <span class="topbar">
+                        <a href="#" class="float-right"><i class="fa fa-heart"></i></a>
+                    </span>
+                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="#" class="title">Leather Sleeve - Macbook 13’’</a>
+                    <div class="price mt-2">$3753.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// --> {% endcomment %}
+        
+        {% comment %} <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap">
+                    <span class="topbar">
+                        <span class="badge badge-success"> NEW </span>
+                    </span>
+                    <img src="../images/items/7.jpg">
+                </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="#" class="title">H&amp;M Polo Shirt Slim Fit</a>
+                        <div class="price-wrap mt-2">
+                            <span class="price">$12.99</span>
+                            <small class="price-old">$14.99</small>
+                        </div> <!-- price-wrap.// -->
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// --> {% endcomment %}
+        {% comment %} <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> 
+                    <img src="../images/items/1.jpg">
+                </div>
+                <figcaption class="info-wrap border-top text-center">
+                    <small class="text-uppercase font-weight-bolder text-warning">ELECTRONICS</small>
+                    <p><a href="#" class="title">IKEA Poäng Swivel Chair</a></p>	
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// --> {% endcomment %}
+    </div>
+
+    </div>
+
+{% endblock %}
